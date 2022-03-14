@@ -42,6 +42,7 @@ dependencies:
   android_alarm_manager_plus: 
   flutter_local_notifications: 
   rxdart: 
+  path_provider: ^2.0.9
 
 dev_dependencies:
   flutter_test:
