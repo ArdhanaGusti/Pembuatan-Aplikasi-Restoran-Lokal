@@ -103,6 +103,7 @@ class ListItem extends StatelessWidget {
                                   builder: (context) {
                                     return AddReview(
                                       id: restaurant.id,
+                                      restaurantz: restaurantz,
                                     );
                                   },
                                 ));

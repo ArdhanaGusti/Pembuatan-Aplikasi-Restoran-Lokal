@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
-import 'package:local_restaurant_2/api/apiService.dart';
+import 'package:local_restaurant_2/api/api_service.dart';
 import 'package:local_restaurant_2/json/restaurant.dart';
 
 enum ResultState { loading, noData, hasData, error }

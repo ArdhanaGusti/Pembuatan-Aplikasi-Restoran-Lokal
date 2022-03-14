@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:local_restaurant_2/api/apiService.dart';
+import 'package:local_restaurant_2/api/api_service.dart';
+import 'package:local_restaurant_2/json/restaurant.dart';
 import 'package:local_restaurant_2/ui/detail_page.dart';
 
 class AddReview extends StatefulWidget {
   final String id;
-  const AddReview({Key? key, required this.id}) : super(key: key);
+  final Restaurantz restaurantz;
+  const AddReview({Key? key, required this.id, required this.restaurantz})
+      : super(key: key);
 
   @override
   State<AddReview> createState() => _AddReviewState();
@@ -60,7 +63,10 @@ class _AddReviewState extends State<AddReview> {
                               onPressed: () =>
                                   Navigator.push(context, MaterialPageRoute(
                                 builder: (context) {
-                                  return Detail(id: widget.id);
+                                  return Detail(
+                                    id: widget.id,
+                                    restaurantz: widget.restaurantz,
+                                  );
                                 },
                               )),
                               child: const Text('Kembali'),

@@ -3,13 +3,33 @@ import 'package:local_restaurant_2/ui/detail_page.dart';
 import 'package:local_restaurant_2/ui/favourite_page.dart';
 import 'package:local_restaurant_2/ui/search_page.dart';
 import 'package:local_restaurant_2/ui/settings_page.dart';
+import 'package:local_restaurant_2/utils/notification_helper.dart';
 import 'package:provider/provider.dart';
 import '../json/restaurant.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../provider/provider_restaurant.dart';
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  final NotificationHelper _notificationHelper = NotificationHelper();
+
+  @override
+  void initState() {
+    super.initState();
+    _notificationHelper.configureSelectNotificationSubject();
+  }
+
+  @override
+  void dispose() {
+    selectNotificationSubject.close();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {

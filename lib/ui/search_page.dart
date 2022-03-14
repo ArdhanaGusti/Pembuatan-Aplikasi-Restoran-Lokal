@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:local_restaurant_2/json/search.dart';
 import 'package:local_restaurant_2/provider/provider_search.dart';
 import 'package:local_restaurant_2/ui/detail_page.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -57,7 +56,6 @@ class _HomeState extends State<Search> {
                             hasil = value;
                             state.fetchAllSearchRestaurant(value);
                           });
-                          // state.apiService.loadSearchData(value);
                         },
                         style: const TextStyle(fontSize: 15),
                         decoration: const InputDecoration(
@@ -108,10 +106,7 @@ class _HomeState extends State<Search> {
 Widget buildListitem(BuildContext context) {
   return Consumer<SeaProvider>(builder: (context, state, _) {
     if (state.state == ResultState.loading) {
-      return Center(
-          child: Container(
-        child: const Text('Cari Restoran'),
-      ));
+      return const Center(child: Text('Cari Restoran'));
     } else if (state.state == ResultState.hasData) {
       return ListView.builder(
           shrinkWrap: true,
@@ -123,7 +118,7 @@ Widget buildListitem(BuildContext context) {
     } else if (state.state == ResultState.noData) {
       return Column(
         children: [
-          Container(
+          SizedBox(
               height: MediaQuery.of(context).size.width / 2,
               width: MediaQuery.of(context).size.width / 2,
               child: Image.asset("assets/error.png")),

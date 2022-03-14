@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:local_restaurant_2/api/apiService.dart';
+import 'package:local_restaurant_2/api/api_service.dart';
 
 import 'package:local_restaurant_2/json/restaurant.dart';
 
